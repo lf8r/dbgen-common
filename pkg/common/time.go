@@ -110,3 +110,9 @@ func universalTimeNanosecond(t time.Time) time.Time {
 func universalTimeMillisecond(t time.Time) time.Time {
 	return t.Round(time.Millisecond).UTC()
 }
+
+// Add is the analog of time.Add.
+func (t Time) Add(dur time.Duration) Time {
+	t.Time.Add(dur)
+	return t
+}
