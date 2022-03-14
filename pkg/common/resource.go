@@ -4,6 +4,17 @@ package common
 
 import "time"
 
+type BaseResource interface {
+	GetID() string
+	SetID(id string)
+	GetName() string
+	SetName(name string)
+	GetCreated() time.Time
+	SetCreated(val time.Time)
+	GetModified() time.Time
+	SetModified(val time.Time)
+}
+
 // Resource is a base type which must be embedded in persisted structs.
 type Resource struct {
 	ID       string
